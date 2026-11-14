@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ماشین‌حساب قیمت تمام‌شده و قیمت فروش محصول | ترازینا</title>
+<meta name="description" content="قیمت تمام‌شده هر عدد محصول (غذا، شیرینی، نوشیدنی و…) را از روی مواد اولیه، ضایعات، بسته‌بندی و سربار حساب کنید و با سود دلخواه، قیمت فروش پیشنهادی بگیرید. رایگان و بدون ثبت‌نام.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"قیمت تمام‌شده چیست؟","acceptedAnswer":{"@type":"Answer","text":"مجموع هزینه‌هایی که برای ساخت یک عدد محصول می‌کنید: مواد اولیه (با احتساب ضایعات)، بسته‌بندی و سهم سربار مثل کارگر و انرژی."}},
+{"@type":"Question","name":"درصد سود روی قیمت فروش با درصد سود روی هزینه چه فرقی دارد؟","acceptedAnswer":{"@type":"Answer","text":"اگر هزینه ۱۰۰ باشد و با ۳۰٪ سود روی هزینه بفروشید، قیمت ۱۳۰ می‌شود و سود واقعی شما ۲۳٪ قیمت فروش است. در این ماشین‌حساب سود دلخواه روی قیمت فروش حساب می‌شود."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.svg" alt="ترازینا" width="150" height="48"></a>
+  <nav><a href="#calc">ماشین‌حساب</a><a href="trades.html">کسب‌وکارها</a><a href="#faq">سؤالات متداول</a><a href="privacy.html">حریم خصوصی</a></nav>
+</div></header>
+
+<main class="wrap">
+  <h1>ماشین‌حساب قیمت تمام‌شده و قیمت فروش محصول</h1>
+  <p class="lead">مواد اولیه را وارد کنید؛ قیمت تمام‌شده هر عدد و قیمت فروش پیشنهادی را با سود دلخواه ببینید. رایگان و بدون ثبت‌نام. اطلاعات شما فقط در همین مرورگر می‌ماند.</p>
+
+  <section id="calc">
+    <div class="card">
+      <h2>۱. مواد اولیه این دستور</h2>
+      <div id="ings"></div>
+      <div class="btnrow"><button id="add" class="primary" type="button">+ افزودن ماده</button></div>
+      <p class="hint">برای هر ماده بنویسید چند تا خریده‌اید و چه قیمتی داده‌اید، و در این دستور چقدر مصرف می‌شود. واحد خرید و مصرف باید هم‌نوع باشد (وزن با وزن، حجم با حجم). «ضایعات» یعنی چند درصد ماده موقع پاک‌کردن یا پخت دور ریخته می‌شود.</p>
+    </div>
+
+    <div class="card">
+      <h2>۲. تولید و هزینه‌های دیگر</h2>
+      <div class="grid">
+        <div><label for="portions">از این دستور چند عدد (پرس) درمی‌آید؟</label><input id="portions" inputmode="decimal" value="10"></div>
+        <div><label for="packaging">بسته‌بندی برای هر عدد (تومان)</label><input id="packaging" inputmode="decimal" value="0"></div>
+        <div><label for="overhead">سربار (کارگر، گاز، برق…) – درصد از هزینه مواد</label><input id="overhead" inputmode="decimal" value="20"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>۳. سود دلخواه</h2>
+      <div class="grid">
+        <div><label for="margin">سود دلخواه – درصد از قیمت فروش</label><input id="margin" inputmode="decimal" value="30"></div>
+        <div><label for="step">گرد کردن قیمت به بالا (تومان)</label>
+          <select id="step"><option value="0">بدون گرد کردن</option><option value="100">۱۰۰</option><option value="500">۵۰۰</option><option value="1000" selected>۱٬۰۰۰</option><option value="5000">۵٬۰۰۰</option><option value="10000">۱۰٬۰۰۰</option></select></div>
+      </div>
+    </div>
+
+    <div class="card result" id="out" aria-live="polite">
+      <h2>نتیجه</h2>
+      <div class="hint" style="margin:0 0 4px">قیمت فروش پیشنهادی هر عدد</div>
+      <div class="big"><span class="num" id="rPrice">—</span> <small style="font-size:16px">تومان</small></div>
+      <div style="margin-top:12px">
+        <div class="kv"><span>قیمت تمام‌شده هر عدد</span><b class="num" id="rCost">—</b></div>
+        <div class="kv"><span>سهم مواد اولیه در هر عدد</span><b class="num" id="rIng">—</b></div>
+        <div class="kv"><span>سود هر عدد</span><b class="num" id="rProfit">—</b></div>
+        <div class="kv"><span>سود واقعی از قیمت فروش (بعد از گرد کردن)</span><b class="num" id="rMargin">—</b></div>
+        <div class="kv"><span>سود روی هزینه (مارک‌آپ)</span><b class="num" id="rMarkup">—</b></div>
+        <div class="kv"><span>سهم مواد از قیمت فروش (فود کاست)</span><b class="num" id="rFood">—</b></div>
+      </div>
+      <div class="err hint" id="rErr"></div>
+      <div class="btnrow"><button id="copy" type="button">کپی نتیجه</button><button id="print" type="button">چاپ</button><button id="reset" type="button">پاک‌کردن همه</button></div>
+    </div>
+
+    <div class="card cta" id="appcta" hidden>
+      <h2>قیمت چند محصول را باهم دنبال می‌کنید؟</h2>
+      <p class="lead">وقتی قیمت مواد عوض می‌شود، برنامه رایگان ترازینا قیمت همه محصولاتتان را دوباره حساب می‌کند.</p>
+      <a id="appbtn" href="#"><button class="primary" type="button">دریافت برنامه</button></a>
+    </div>
+  </section>
+
+        <section class="card" id="tradeslinks"><h2>ماشین‌حساب برای کسب‌وکار شما</h2><div class="chips"><a class="chip" href="shirini-keyk.html">شیرینی و کیک</a><a class="chip" href="cafe-ghahve.html">کافه و قهوه</a><a class="chip" href="nooshidani-abmive.html">آبمیوه و نوشیدنی</a><a class="chip" href="fastfood.html">فست‌فود و ساندویچ</a><a class="chip" href="pitza.html">پیتزا</a><a class="chip" href="nan-nanvaei.html">نان و نانوایی</a><a class="chip" href="bastani-deser.html">بستنی و دسر</a><a class="chip" href="torshi-morabba.html">ترشی و مربا</a><a class="chip" href="ajil-khoshkbar.html">آجیل و خشکبار</a><a class="chip" href="ghaza-restoran.html">غذا و رستوران</a><a class="chip" href="catering-ghaza-khanegi.html">کترینگ و غذای خانگی</a><a class="chip" href="shokolat-gaz-sohan.html">شکلات، گز و سوهان</a><a class="chip" href="labaniyat.html">لبنیات، ماست و پنیر</a></div></section>
+  <section id="faq" class="card">
+    <h2>سؤالات متداول</h2>
+    <details><summary>قیمت تمام‌شده چیست؟</summary><p>مجموع هزینه‌هایی که برای ساخت یک عدد محصول می‌کنید: مواد اولیه (با احتساب ضایعات)، بسته‌بندی و سهم سربار مثل کارگر، گاز و برق.</p></details>
+    <details><summary>درصد سود روی قیمت فروش با درصد سود روی هزینه چه فرقی دارد؟</summary><p>اگر هزینه ۱۰۰ باشد و روی آن ۳۰٪ بگذارید، قیمت ۱۳۰ می‌شود، اما سود واقعی شما فقط حدود ۲۳٪ قیمت فروش است. در این ماشین‌حساب سود دلخواه روی قیمت فروش حساب می‌شود (برای سود ۳۰٪، قیمت = هزینه ÷ ۰٫۷).</p></details>
+    <details><summary>ضایعات چطور حساب می‌شود؟</summary><p>اگر ۱۰٪ یک ماده دور ریخته شود، برای داشتن مقدار لازم باید بیشتر خرید کنید؛ پس هزینه آن ماده ÷ ۰٫۹ می‌شود. برای ماده‌هایی مثل گوشت با استخوان، سبزی و میوه این عدد مهم است.</p></details>
+    <details><summary>سربار را چقدر بگذارم؟</summary><p>هر کسب‌وکار فرق می‌کند. اگر نمی‌دانید، با ۱۵ تا ۳۰ درصد هزینه مواد شروع کنید و بعد با اعداد واقعی کارگاه (اجاره، حقوق، قبض‌ها تقسیم بر تعداد تولید ماهانه) اصلاح کنید. این فقط یک نقطه شروع است.</p></details>
+    <details><summary>اطلاعات من کجا ذخیره می‌شود؟</summary><p>فقط در مرورگر خودتان. چیزی به سرور ما فرستاده نمی‌شود. اگر داده‌های مرورگر را پاک کنید، این اطلاعات هم پاک می‌شود.</p></details>
+  </section>
+</main>
+
+<footer class="wrap"><a href="privacy.html">حریم خصوصی</a> · <span id="brand2"></span></footer>
+
+<script src="config.js"></script>
+<script src="calc-core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

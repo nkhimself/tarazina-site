@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محاسبه قیمت تمام شده آبمیوه، اسموتی و نوشیدنی | ترازینا</title>
+<meta name="description" content="قیمت تمام‌شده آبمیوه طبیعی، اسموتی و شیک را با احتساب ضایعات پوست و هسته حساب کنید و قیمت فروش لیوانی تعیین کنید.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ضایعات پرتقال برای آبمیوه چقدر است؟", "acceptedAnswer": {"@type": "Answer", "text": "بسته به نوع و خوب بودن میوه فرق می‌کند، پس یک بار وزن‌کشی کنید. عدد ۴۵٪ در مثال فقط نمونه است."}}, {"@type": "Question", "name": "قیمت اسموتی را چطور حساب کنم؟", "acceptedAnswer": {"@type": "Answer", "text": "هر میوه و ماده را جداگانه با قیمت خرید و مقدار مصرف وارد کنید، لیوان و درب را اضافه کنید و سود دلخواه را بگذارید."}}, {"@type": "Question", "name": "اطلاعاتی که وارد می‌کنم کجا ذخیره می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "فقط در مرورگر خودتان. چیزی به سرور فرستاده نمی‌شود."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.svg" alt="ترازینا" width="150" height="48"></a>
+  <nav><a href="./">ماشین‌حساب عمومی</a><a href="trades.html">کسب‌وکارها</a><a href="privacy.html">حریم خصوصی</a></nav>
+</div></header>
+<main class="wrap">
+  <p class="hint" style="margin-bottom:0"><a href="./">ترازینا</a> › <a href="trades.html">کسب‌وکارها</a> › آبمیوه و نوشیدنی</p>
+  <h1>محاسبه قیمت تمام شده آبمیوه، اسموتی و نوشیدنی</h1>
+  <p class="lead">در آبمیوه‌فروشی مهم‌ترین عدد، ضایعات میوه است. اینجا آن را در هزینه هر لیوان وارد کنید. رایگان و بدون ثبت‌نام؛ اطلاعات شما فقط در همین مرورگر می‌ماند.</p>
+  <section id="calc">
+    <div class="card">
+      <h2>۱. مواد اولیه این دستور</h2><p class="hint" style="margin-top:0">اعداد این مثال فقط نمونه است؛ قیمت و مقدار واقعی خودتان را بنویسید.</p>
+      <div id="ings"></div>
+      <div class="btnrow"><button id="add" class="primary" type="button">+ افزودن ماده</button></div>
+      <p class="hint">برای هر ماده بنویسید چند تا خریده‌اید و چه قیمتی داده‌اید، و در این دستور چقدر مصرف می‌شود. واحد خرید و مصرف باید هم‌نوع باشد (وزن با وزن، حجم با حجم). «ضایعات» یعنی چند درصد ماده موقع پاک‌کردن یا پخت دور ریخته می‌شود.</p>
+    </div>
+
+    <div class="card">
+      <h2>۲. تولید و هزینه‌های دیگر</h2>
+      <div class="grid">
+        <div><label for="portions">از این دستور چند لیوان درمی‌آید؟</label><input id="portions" inputmode="decimal" value="10"></div>
+        <div><label for="packaging">بسته‌بندی برای هر لیوان (تومان)</label><input id="packaging" inputmode="decimal" value="0"></div>
+        <div><label for="overhead">سربار (کارگر، گاز، برق…) – درصد از هزینه مواد</label><input id="overhead" inputmode="decimal" value="20"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>۳. سود دلخواه</h2>
+      <div class="grid">
+        <div><label for="margin">سود دلخواه – درصد از قیمت فروش</label><input id="margin" inputmode="decimal" value="30"></div>
+        <div><label for="step">گرد کردن قیمت به بالا (تومان)</label>
+          <select id="step"><option value="0">بدون گرد کردن</option><option value="100">۱۰۰</option><option value="500">۵۰۰</option><option value="1000" selected>۱٬۰۰۰</option><option value="5000">۵٬۰۰۰</option><option value="10000">۱۰٬۰۰۰</option></select></div>
+      </div>
+    </div>
+
+    <div class="card result" id="out" aria-live="polite">
+      <h2>نتیجه</h2>
+      <div class="hint" style="margin:0 0 4px">قیمت فروش پیشنهادی هر لیوان</div>
+      <div class="big"><span class="num" id="rPrice">—</span> <small style="font-size:16px">تومان</small></div>
+      <div style="margin-top:12px">
+        <div class="kv"><span>قیمت تمام‌شده هر لیوان</span><b class="num" id="rCost">—</b></div>
+        <div class="kv"><span>سهم مواد اولیه در هر لیوان</span><b class="num" id="rIng">—</b></div>
+        <div class="kv"><span>سود هر لیوان</span><b class="num" id="rProfit">—</b></div>
+        <div class="kv"><span>سود واقعی از قیمت فروش (بعد از گرد کردن)</span><b class="num" id="rMargin">—</b></div>
+        <div class="kv"><span>سود روی هزینه (مارک‌آپ)</span><b class="num" id="rMarkup">—</b></div>
+        <div class="kv"><span>سهم مواد از قیمت فروش (فود کاست)</span><b class="num" id="rFood">—</b></div>
+      </div>
+      <div class="err hint" id="rErr"></div>
+      <div class="btnrow"><button id="copy" type="button">کپی نتیجه</button><button id="print" type="button">چاپ</button><button id="reset" type="button">پاک‌کردن همه</button></div>
+    </div>
+
+    <div class="card cta" id="appcta" hidden>
+      <h2>قیمت چند محصول را باهم دنبال می‌کنید؟</h2>
+      <p class="lead">وقتی قیمت مواد عوض می‌شود، برنامه رایگان ترازینا قیمت همه محصولاتتان را دوباره حساب می‌کند.</p>
+      <a id="appbtn" href="#"><button class="primary" type="button">دریافت برنامه</button></a>
+    </div>
+  </section>
+  <section class="card"><h2>نکته‌های قیمت‌گذاری: آبمیوه و نوشیدنی</h2><ul class="tips"><li>ضایعات هر میوه را خودتان اندازه بگیرید: یک کیلو میوه را پوست بکنید و وزن قابل‌استفاده را بسنجید. از روی همین ضایعات بنویسید.</li><li>میوه فصلی و غیرفصلی قیمت خیلی متفاوت دارد. اگر قیمت خرید عوض شد، اول اینجا دوباره حساب کنید و بعد منو را تغییر دهید.</li><li>یخ، نی، لیوان و درب را در بسته‌بندی بگذارید. در نوشیدنی‌های ارزان، همین‌ها سهم بزرگی از هزینه است.</li><li>برای میوه‌هایی که زود خراب می‌شوند، درصد ضایعات خراب‌شدن را هم کنار ضایعات پوست اضافه کنید.</li></ul></section>
+  <section id="faq" class="card"><h2>سؤالات متداول</h2><details><summary>ضایعات پرتقال برای آبمیوه چقدر است؟</summary><p>بسته به نوع و خوب بودن میوه فرق می‌کند، پس یک بار وزن‌کشی کنید. عدد ۴۵٪ در مثال فقط نمونه است.</p></details><details><summary>قیمت اسموتی را چطور حساب کنم؟</summary><p>هر میوه و ماده را جداگانه با قیمت خرید و مقدار مصرف وارد کنید، لیوان و درب را اضافه کنید و سود دلخواه را بگذارید.</p></details><details><summary>اطلاعاتی که وارد می‌کنم کجا ذخیره می‌شود؟</summary><p>فقط در مرورگر خودتان. چیزی به سرور فرستاده نمی‌شود.</p></details></section>
+  <section class="card"><h2>کسب‌وکارهای دیگر</h2><div class="chips"><a class="chip" href="shirini-keyk.html">شیرینی و کیک</a><a class="chip" href="cafe-ghahve.html">کافه و قهوه</a><a class="chip" href="fastfood.html">فست‌فود و ساندویچ</a><a class="chip" href="pitza.html">پیتزا</a><a class="chip" href="nan-nanvaei.html">نان و نانوایی</a><a class="chip" href="bastani-deser.html">بستنی و دسر</a><a class="chip" href="torshi-morabba.html">ترشی و مربا</a><a class="chip" href="ajil-khoshkbar.html">آجیل و خشکبار</a><a class="chip" href="ghaza-restoran.html">غذا و رستوران</a><a class="chip" href="catering-ghaza-khanegi.html">کترینگ و غذای خانگی</a><a class="chip" href="shokolat-gaz-sohan.html">شکلات، گز و سوهان</a><a class="chip" href="labaniyat.html">لبنیات، ماست و پنیر</a></div></section>
+</main>
+<footer class="wrap"><a href="privacy.html">حریم خصوصی</a> · <span id="brand2"></span></footer>
+<script>window.PAGE={"slug": "nooshidani-abmive", "unit": "لیوان", "state": {"lines": [{"name": "پرتقال", "price": "40000", "buyQty": "1", "buyUnit": "kg", "useQty": "500", "useUnit": "g", "waste": "45"}, {"name": "شکر", "price": "45000", "buyQty": "1", "buyUnit": "kg", "useQty": "10", "useUnit": "g", "waste": "0"}, {"name": "لیوان و درب", "price": "150000", "buyQty": "50", "buyUnit": "piece", "useQty": "1", "useUnit": "piece", "waste": "0"}], "portions": "1", "packaging": "0", "overheadPct": "25", "marginPct": "60", "step": "5000"}};</script>
+<script src="config.js"></script>
+<script src="calc-core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

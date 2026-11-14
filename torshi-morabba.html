@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محاسبه قیمت تمام شده ترشی، مربا و کنسرو خانگی | ترازینا</title>
+<meta name="description" content="قیمت تمام‌شده ترشی، مربا و رب خانگی را با مواد، شیشه و درب حساب کنید و قیمت فروش هر شیشه را بگیرید.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "مواد ترشی را خرید فصلی حساب کنم یا قیمت روز؟", "acceptedAnswer": {"@type": "Answer", "text": "هزینه‌ای که واقعاً برای مواد همین تولید پرداخته‌اید. اگر مواد را در فصل ارزان خریده‌اید، همان قیمت را بنویسید ولی برای تولید بعدی دوباره قیمت را به‌روز کنید."}}, {"@type": "Question", "name": "هزینه نگهداری و انبار را چطور بیاورم؟", "acceptedAnswer": {"@type": "Answer", "text": "در سربار. ترشی و مربا ماه‌ها در انبار می‌ماند، پس اجاره و سرمایه‌ای که در موجودی خوابیده را فراموش نکنید."}}, {"@type": "Question", "name": "اطلاعاتی که وارد می‌کنم کجا ذخیره می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "فقط در مرورگر خودتان. چیزی به سرور فرستاده نمی‌شود."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><img src="logo.svg" alt="ترازینا" width="150" height="48"></a>
+  <nav><a href="./">ماشین‌حساب عمومی</a><a href="trades.html">کسب‌وکارها</a><a href="privacy.html">حریم خصوصی</a></nav>
+</div></header>
+<main class="wrap">
+  <p class="hint" style="margin-bottom:0"><a href="./">ترازینا</a> › <a href="trades.html">کسب‌وکارها</a> › ترشی و مربا</p>
+  <h1>محاسبه قیمت تمام شده ترشی، مربا و کنسرو خانگی</h1>
+  <p class="lead">ترشی و مربا فصلی هستند و قیمت مواد در فصل تولید فرق می‌کند. هزینه هر شیشه را از روی مواد و ظرف حساب کنید. رایگان و بدون ثبت‌نام؛ اطلاعات شما فقط در همین مرورگر می‌ماند.</p>
+  <section id="calc">
+    <div class="card">
+      <h2>۱. مواد اولیه این دستور</h2><p class="hint" style="margin-top:0">اعداد این مثال فقط نمونه است؛ قیمت و مقدار واقعی خودتان را بنویسید.</p>
+      <div id="ings"></div>
+      <div class="btnrow"><button id="add" class="primary" type="button">+ افزودن ماده</button></div>
+      <p class="hint">برای هر ماده بنویسید چند تا خریده‌اید و چه قیمتی داده‌اید، و در این دستور چقدر مصرف می‌شود. واحد خرید و مصرف باید هم‌نوع باشد (وزن با وزن، حجم با حجم). «ضایعات» یعنی چند درصد ماده موقع پاک‌کردن یا پخت دور ریخته می‌شود.</p>
+    </div>
+
+    <div class="card">
+      <h2>۲. تولید و هزینه‌های دیگر</h2>
+      <div class="grid">
+        <div><label for="portions">از این دستور چند شیشه درمی‌آید؟</label><input id="portions" inputmode="decimal" value="10"></div>
+        <div><label for="packaging">بسته‌بندی برای هر شیشه (تومان)</label><input id="packaging" inputmode="decimal" value="0"></div>
+        <div><label for="overhead">سربار (کارگر، گاز، برق…) – درصد از هزینه مواد</label><input id="overhead" inputmode="decimal" value="20"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>۳. سود دلخواه</h2>
+      <div class="grid">
+        <div><label for="margin">سود دلخواه – درصد از قیمت فروش</label><input id="margin" inputmode="decimal" value="30"></div>
+        <div><label for="step">گرد کردن قیمت به بالا (تومان)</label>
+          <select id="step"><option value="0">بدون گرد کردن</option><option value="100">۱۰۰</option><option value="500">۵۰۰</option><option value="1000" selected>۱٬۰۰۰</option><option value="5000">۵٬۰۰۰</option><option value="10000">۱۰٬۰۰۰</option></select></div>
+      </div>
+    </div>
+
+    <div class="card result" id="out" aria-live="polite">
+      <h2>نتیجه</h2>
+      <div class="hint" style="margin:0 0 4px">قیمت فروش پیشنهادی هر شیشه</div>
+      <div class="big"><span class="num" id="rPrice">—</span> <small style="font-size:16px">تومان</small></div>
+      <div style="margin-top:12px">
+        <div class="kv"><span>قیمت تمام‌شده هر شیشه</span><b class="num" id="rCost">—</b></div>
+        <div class="kv"><span>سهم مواد اولیه در هر شیشه</span><b class="num" id="rIng">—</b></div>
+        <div class="kv"><span>سود هر شیشه</span><b class="num" id="rProfit">—</b></div>
+        <div class="kv"><span>سود واقعی از قیمت فروش (بعد از گرد کردن)</span><b class="num" id="rMargin">—</b></div>
+        <div class="kv"><span>سود روی هزینه (مارک‌آپ)</span><b class="num" id="rMarkup">—</b></div>
+        <div class="kv"><span>سهم مواد از قیمت فروش (فود کاست)</span><b class="num" id="rFood">—</b></div>
+      </div>
+      <div class="err hint" id="rErr"></div>
+      <div class="btnrow"><button id="copy" type="button">کپی نتیجه</button><button id="print" type="button">چاپ</button><button id="reset" type="button">پاک‌کردن همه</button></div>
+    </div>
+
+    <div class="card cta" id="appcta" hidden>
+      <h2>قیمت چند محصول را باهم دنبال می‌کنید؟</h2>
+      <p class="lead">وقتی قیمت مواد عوض می‌شود، برنامه رایگان ترازینا قیمت همه محصولاتتان را دوباره حساب می‌کند.</p>
+      <a id="appbtn" href="#"><button class="primary" type="button">دریافت برنامه</button></a>
+    </div>
+  </section>
+  <section class="card"><h2>نکته‌های قیمت‌گذاری: ترشی و مربا</h2><ul class="tips"><li>مربا هنگام پخت آب از دست می‌دهد. وزن نهایی را بسنجید و تعداد شیشه را از همان بشمارید.</li><li>شیشه و درب بخش مهمی از هزینه است. اگر شیشه را پس می‌گیرید، فقط سهم هزینه آن را بنویسید.</li><li>برچسب، عکس و بسته‌بندی ارسال را هم بنویسید.</li><li>ایمنی غذایی (بهداشت، سترون‌سازی، اسیدیته مناسب) را فدای هزینه نکنید.</li></ul></section>
+  <section id="faq" class="card"><h2>سؤالات متداول</h2><details><summary>مواد ترشی را خرید فصلی حساب کنم یا قیمت روز؟</summary><p>هزینه‌ای که واقعاً برای مواد همین تولید پرداخته‌اید. اگر مواد را در فصل ارزان خریده‌اید، همان قیمت را بنویسید ولی برای تولید بعدی دوباره قیمت را به‌روز کنید.</p></details><details><summary>هزینه نگهداری و انبار را چطور بیاورم؟</summary><p>در سربار. ترشی و مربا ماه‌ها در انبار می‌ماند، پس اجاره و سرمایه‌ای که در موجودی خوابیده را فراموش نکنید.</p></details><details><summary>اطلاعاتی که وارد می‌کنم کجا ذخیره می‌شود؟</summary><p>فقط در مرورگر خودتان. چیزی به سرور فرستاده نمی‌شود.</p></details></section>
+  <section class="card"><h2>کسب‌وکارهای دیگر</h2><div class="chips"><a class="chip" href="shirini-keyk.html">شیرینی و کیک</a><a class="chip" href="cafe-ghahve.html">کافه و قهوه</a><a class="chip" href="nooshidani-abmive.html">آبمیوه و نوشیدنی</a><a class="chip" href="fastfood.html">فست‌فود و ساندویچ</a><a class="chip" href="pitza.html">پیتزا</a><a class="chip" href="nan-nanvaei.html">نان و نانوایی</a><a class="chip" href="bastani-deser.html">بستنی و دسر</a><a class="chip" href="ajil-khoshkbar.html">آجیل و خشکبار</a><a class="chip" href="ghaza-restoran.html">غذا و رستوران</a><a class="chip" href="catering-ghaza-khanegi.html">کترینگ و غذای خانگی</a><a class="chip" href="shokolat-gaz-sohan.html">شکلات، گز و سوهان</a><a class="chip" href="labaniyat.html">لبنیات، ماست و پنیر</a></div></section>
+</main>
+<footer class="wrap"><a href="privacy.html">حریم خصوصی</a> · <span id="brand2"></span></footer>
+<script>window.PAGE={"slug": "torshi-morabba", "unit": "شیشه", "state": {"lines": [{"name": "خیار", "price": "40000", "buyQty": "1", "buyUnit": "kg", "useQty": "1000", "useUnit": "g", "waste": "5"}, {"name": "سرکه", "price": "30000", "buyQty": "1", "buyUnit": "l", "useQty": "300", "useUnit": "ml", "waste": "0"}, {"name": "نمک", "price": "15000", "buyQty": "1", "buyUnit": "kg", "useQty": "30", "useUnit": "g", "waste": "0"}, {"name": "سبزی و ادویه", "price": "100000", "buyQty": "1", "buyUnit": "kg", "useQty": "100", "useUnit": "g", "waste": "10"}, {"name": "شیشه و درب", "price": "200000", "buyQty": "20", "buyUnit": "piece", "useQty": "2", "useUnit": "piece", "waste": "0"}], "portions": "2", "packaging": "2000", "overheadPct": "20", "marginPct": "40", "step": "5000"}};</script>
+<script src="config.js"></script>
+<script src="calc-core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
