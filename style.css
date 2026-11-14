@@ -9,7 +9,7 @@ a { color:var(--brand); }
 header.top { border-bottom:1px solid var(--line); background:var(--card); }
 header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:12px; padding-bottom:12px; flex-wrap:wrap; }
 .brand { display:inline-flex; align-items:center; text-decoration:none; }
-.brand img { height:46px; width:auto; display:block; }
+.brand img { height:56px; width:auto; display:block; }
 nav a { margin-inline-start:16px; text-decoration:none; color:var(--ink); font-size:15px; }
 h1 { font-size:26px; line-height:1.5; margin:28px 0 8px; }
 h2 { font-size:20px; margin:0 0 10px; }
