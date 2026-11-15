@@ -71,6 +71,7 @@
   document.addEventListener('input', update);
   document.addEventListener('change', update);
   $('add').onclick = function () { addRow(); update(); };
+  $('clearAll').onclick = function () { if (confirm('همه مواد این صفحه حذف شود؟')) { var s = read(); s.lines = []; write(s); update(); } };
   $('print').onclick = function () { window.print(); };
   $('reset').onclick = function () { if (confirm('همه اطلاعات این صفحه پاک شود؟')) { write({ lines: [], portions: '10', packaging: '0', overheadPct: '20', marginPct: '30', step: '1000' }); update(); } };
   $('copy').onclick = function () {
@@ -80,7 +81,6 @@
   };
 
   // brand + links from config.js
-  var b = S.brand || 'ترازینا'; if ($('brand2')) $('brand2').textContent = b;
   if (S.appUrl) { $('appcta').hidden = false; $('appbtn').href = S.appUrl; }
 
   // start: saved state, otherwise a small example so the page is not empty

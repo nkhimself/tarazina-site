@@ -12,24 +12,28 @@
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="./"><img src="logo.svg" alt="ترازینا" width="97" height="56"></a>
-  <nav><a href="#calc">ماشین‌حساب</a><a href="trades.html">کسب‌وکارها</a><a href="#faq">سؤالات متداول</a><a href="privacy.html">حریم خصوصی</a></nav>
+  <a class="brand" href="./" aria-label="ترازینا tarazina"><img class="b-fa" src="logo-fa.svg" alt="ترازینا" width="84" height="38"><span class="b-sep"></span><img class="b-en" src="logo-en.svg" alt="tarazina" width="97" height="21"></a>
+  <nav><a href="./#calc">ماشین‌حساب</a><a href="trades.html">کسب‌وکارها</a><a href="about.html">درباره ما</a><a href="./#faq">سؤالات متداول</a></nav>
 </div></header>
 
 <main class="wrap">
-  <h1>ماشین‌حساب قیمت تمام‌شده و قیمت فروش محصول</h1>
-  <p class="lead">مواد اولیه را وارد کنید؛ قیمت تمام‌شده هر عدد و قیمت فروش پیشنهادی را با سود دلخواه ببینید. رایگان و بدون ثبت‌نام. اطلاعات شما فقط در همین مرورگر می‌ماند.</p>
+<section class="hero">
+  <div class="badges"><span class="badge">رایگان</span><span class="badge">بدون ثبت‌نام</span><span class="badge">اطلاعات فقط در مرورگر شما</span></div>
+  <h1>قیمت تمام‌شده و قیمت فروش محصول‌تان را در چند ثانیه حساب کنید</h1>
+  <p>مواد اولیه را وارد کنید؛ قیمت تمام‌شده هر عدد و قیمت فروش پیشنهادی را با سود دلخواه ببینید.</p>
+  <a class="btn main" href="#calc">شروع محاسبه</a><a class="btn alt" href="trades.html">ماشین‌حساب هر کسب‌وکار</a>
+</section>
 
   <section id="calc">
     <div class="card">
-      <h2>۱. مواد اولیه این دستور</h2>
+      <div class="cardhead"><h2><span class="sn">۱</span>مواد اولیه این دستور</h2><button id="clearAll" class="ghost" type="button">حذف همه مواد</button></div>
       <div id="ings"></div>
       <div class="btnrow"><button id="add" class="primary" type="button">+ افزودن ماده</button></div>
       <p class="hint">برای هر ماده بنویسید چند تا خریده‌اید و چه قیمتی داده‌اید، و در این دستور چقدر مصرف می‌شود. واحد خرید و مصرف باید هم‌نوع باشد (وزن با وزن، حجم با حجم). «ضایعات» یعنی چند درصد ماده موقع پاک‌کردن یا پخت دور ریخته می‌شود.</p>
     </div>
 
     <div class="card">
-      <h2>۲. تولید و هزینه‌های دیگر</h2>
+      <h2><span class="sn">۲</span>تولید و هزینه‌های دیگر</h2>
       <div class="grid">
         <div><label for="portions">از این دستور چند عدد (پرس) درمی‌آید؟</label><input id="portions" inputmode="decimal" value="10"></div>
         <div><label for="packaging">بسته‌بندی برای هر عدد (تومان)</label><input id="packaging" inputmode="decimal" value="0"></div>
@@ -38,7 +42,7 @@
     </div>
 
     <div class="card">
-      <h2>۳. سود دلخواه</h2>
+      <h2><span class="sn">۳</span>سود دلخواه</h2>
       <div class="grid">
         <div><label for="margin">سود دلخواه – درصد از قیمت فروش</label><input id="margin" inputmode="decimal" value="30"></div>
         <div><label for="step">گرد کردن قیمت به بالا (تومان)</label>
@@ -69,7 +73,13 @@
     </div>
   </section>
 
-        <section class="card" id="tradeslinks"><h2>ماشین‌حساب برای کسب‌وکار شما</h2><div class="chips"><a class="chip" href="shirini-keyk.html">شیرینی و کیک</a><a class="chip" href="cafe-ghahve.html">کافه و قهوه</a><a class="chip" href="nooshidani-abmive.html">آبمیوه و نوشیدنی</a><a class="chip" href="fastfood.html">فست‌فود و ساندویچ</a><a class="chip" href="pitza.html">پیتزا</a><a class="chip" href="nan-nanvaei.html">نان و نانوایی</a><a class="chip" href="bastani-deser.html">بستنی و دسر</a><a class="chip" href="torshi-morabba.html">ترشی و مربا</a><a class="chip" href="ajil-khoshkbar.html">آجیل و خشکبار</a><a class="chip" href="ghaza-restoran.html">غذا و رستوران</a><a class="chip" href="catering-ghaza-khanegi.html">کترینگ و غذای خانگی</a><a class="chip" href="shokolat-gaz-sohan.html">شکلات، گز و سوهان</a><a class="chip" href="labaniyat.html">لبنیات، ماست و پنیر</a></div></section>
+                <section class="feats" id="why">
+  <div class="feat"><i></i><h3>حساب دقیق‌تر</h3><p>ضایعات، بسته‌بندی و سربار هم در قیمت می‌آیند، نه فقط قیمت مواد.</p></div>
+  <div class="feat"><i></i><h3>ساده و رایگان</h3><p>ثبت‌نام نمی‌خواهد. مواد را بنویسید و همان لحظه قیمت را ببینید.</p></div>
+  <div class="feat"><i></i><h3>اطلاعات پیش خودتان</h3><p>اعدادتان فقط در مرورگر خودتان می‌ماند و به جایی فرستاده نمی‌شود.</p></div>
+</section>
+<p class="hint" style="margin:-4px 0 18px">بیشتر بدانید: <a href="about.html">ترازینا چطور قیمت را حساب می‌کند؟</a></p>
+<section class="card" id="tradeslinks"><h2>ماشین‌حساب برای کسب‌وکار شما</h2><div class="chips"><a class="chip" href="shirini-keyk.html">شیرینی و کیک</a><a class="chip" href="cafe-ghahve.html">کافه و قهوه</a><a class="chip" href="nooshidani-abmive.html">آبمیوه و نوشیدنی</a><a class="chip" href="fastfood.html">فست‌فود و ساندویچ</a><a class="chip" href="pitza.html">پیتزا</a><a class="chip" href="nan-nanvaei.html">نان و نانوایی</a><a class="chip" href="bastani-deser.html">بستنی و دسر</a><a class="chip" href="torshi-morabba.html">ترشی و مربا</a><a class="chip" href="ajil-khoshkbar.html">آجیل و خشکبار</a><a class="chip" href="ghaza-restoran.html">غذا و رستوران</a><a class="chip" href="catering-ghaza-khanegi.html">کترینگ و غذای خانگی</a><a class="chip" href="shokolat-gaz-sohan.html">شکلات، گز و سوهان</a><a class="chip" href="labaniyat.html">لبنیات، ماست و پنیر</a></div></section>
   <section id="faq" class="card">
     <h2>سؤالات متداول</h2>
     <details><summary>قیمت تمام‌شده چیست؟</summary><p>مجموع هزینه‌هایی که برای ساخت یک عدد محصول می‌کنید: مواد اولیه (با احتساب ضایعات)، بسته‌بندی و سهم سربار مثل کارگر، گاز و برق.</p></details>
@@ -80,7 +90,14 @@
   </section>
 </main>
 
-<footer class="wrap"><a href="privacy.html">حریم خصوصی</a> · <span id="brand2"></span></footer>
+<footer class="site-footer"><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand"><div class="flogo"><img class="b-fa" src="logo-fa-light.svg" alt="ترازینا" width="97" height="44"><span class="b-sep"></span><img class="b-en" src="logo-en-light.svg" alt="tarazina" width="115" height="25"></div><p>ابزار ساده قیمت‌گذاری برای کسب‌وکارهای کوچک: مواد اولیه را وارد کنید و قیمت تمام‌شده و قیمت فروش هر محصول را ببینید.</p></div>
+    <div><h3>ابزارها</h3><a href="./#calc">ماشین‌حساب عمومی</a><a href="trades.html">ماشین‌حساب هر کسب‌وکار</a></div>
+    <div><h3>ترازینا</h3><a href="about.html">درباره ما</a><a href="./#faq">سؤالات متداول</a></div>
+  </div>
+  <div class="fbottom"><span>© ۱۴۰۵ ترازینا · tarazina</span><a href="privacy.html">حریم خصوصی</a></div>
+</div></footer>
 
 <script src="config.js"></script>
 <script src="calc-core.js"></script>

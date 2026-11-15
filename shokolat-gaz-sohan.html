@@ -10,8 +10,8 @@
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="./"><img src="logo.svg" alt="ترازینا" width="97" height="56"></a>
-  <nav><a href="./">ماشین‌حساب عمومی</a><a href="trades.html">کسب‌وکارها</a><a href="privacy.html">حریم خصوصی</a></nav>
+  <a class="brand" href="./" aria-label="ترازینا tarazina"><img class="b-fa" src="logo-fa.svg" alt="ترازینا" width="84" height="38"><span class="b-sep"></span><img class="b-en" src="logo-en.svg" alt="tarazina" width="97" height="21"></a>
+  <nav><a href="./#calc">ماشین‌حساب</a><a href="trades.html">کسب‌وکارها</a><a href="about.html">درباره ما</a><a href="./#faq">سؤالات متداول</a></nav>
 </div></header>
 <main class="wrap">
   <p class="hint" style="margin-bottom:0"><a href="./">ترازینا</a> › <a href="trades.html">کسب‌وکارها</a> › شکلات، گز و سوهان</p>
@@ -19,14 +19,14 @@
   <p class="lead">برای سوغات و شیرینی سنتی، جعبه و بسته‌بندی بخش بزرگی از قیمت است. مواد را وارد کنید، جعبه را اضافه کنید و قیمت را ببینید. رایگان و بدون ثبت‌نام؛ اطلاعات شما فقط در همین مرورگر می‌ماند.</p>
   <section id="calc">
     <div class="card">
-      <h2>۱. مواد اولیه این دستور</h2><p class="hint" style="margin-top:0">اعداد این مثال فقط نمونه است؛ قیمت و مقدار واقعی خودتان را بنویسید.</p>
-      <div id="ings"></div>
+      <div class="cardhead"><h2><span class="sn">۱</span>مواد اولیه این دستور</h2><button id="clearAll" class="ghost" type="button">حذف همه مواد</button></div>
+      <p class="hint" style="margin-top:0">اعداد این مثال فقط نمونه است؛ قیمت و مقدار واقعی خودتان را بنویسید، یا با «حذف همه مواد» از صفحه خالی شروع کنید.</p><div id="ings"></div>
       <div class="btnrow"><button id="add" class="primary" type="button">+ افزودن ماده</button></div>
       <p class="hint">برای هر ماده بنویسید چند تا خریده‌اید و چه قیمتی داده‌اید، و در این دستور چقدر مصرف می‌شود. واحد خرید و مصرف باید هم‌نوع باشد (وزن با وزن، حجم با حجم). «ضایعات» یعنی چند درصد ماده موقع پاک‌کردن یا پخت دور ریخته می‌شود.</p>
     </div>
 
     <div class="card">
-      <h2>۲. تولید و هزینه‌های دیگر</h2>
+      <h2><span class="sn">۲</span>تولید و هزینه‌های دیگر</h2>
       <div class="grid">
         <div><label for="portions">از این دستور چند جعبه درمی‌آید؟</label><input id="portions" inputmode="decimal" value="10"></div>
         <div><label for="packaging">بسته‌بندی برای هر جعبه (تومان)</label><input id="packaging" inputmode="decimal" value="0"></div>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="card">
-      <h2>۳. سود دلخواه</h2>
+      <h2><span class="sn">۳</span>سود دلخواه</h2>
       <div class="grid">
         <div><label for="margin">سود دلخواه – درصد از قیمت فروش</label><input id="margin" inputmode="decimal" value="30"></div>
         <div><label for="step">گرد کردن قیمت به بالا (تومان)</label>
@@ -69,7 +69,14 @@
   <section id="faq" class="card"><h2>سؤالات متداول</h2><details><summary>قیمت سوغات جعبه‌ای را چطور حساب کنم؟</summary><p>هزینه مواد برای یک جعبه، قیمت جعبه و بسته‌بندی را جمع کنید و سود دلخواه را اضافه کنید.</p></details><details><summary>پسته و زعفران را چطور بنویسم؟</summary><p>قیمت و مقدار خرید را برحسب گرم یا کیلوگرم وارد کنید. برای زعفران گرم مناسب‌تر است.</p></details><details><summary>اطلاعاتی که وارد می‌کنم کجا ذخیره می‌شود؟</summary><p>فقط در مرورگر خودتان. چیزی به سرور فرستاده نمی‌شود.</p></details></section>
   <section class="card"><h2>کسب‌وکارهای دیگر</h2><div class="chips"><a class="chip" href="shirini-keyk.html">شیرینی و کیک</a><a class="chip" href="cafe-ghahve.html">کافه و قهوه</a><a class="chip" href="nooshidani-abmive.html">آبمیوه و نوشیدنی</a><a class="chip" href="fastfood.html">فست‌فود و ساندویچ</a><a class="chip" href="pitza.html">پیتزا</a><a class="chip" href="nan-nanvaei.html">نان و نانوایی</a><a class="chip" href="bastani-deser.html">بستنی و دسر</a><a class="chip" href="torshi-morabba.html">ترشی و مربا</a><a class="chip" href="ajil-khoshkbar.html">آجیل و خشکبار</a><a class="chip" href="ghaza-restoran.html">غذا و رستوران</a><a class="chip" href="catering-ghaza-khanegi.html">کترینگ و غذای خانگی</a><a class="chip" href="labaniyat.html">لبنیات، ماست و پنیر</a></div></section>
 </main>
-<footer class="wrap"><a href="privacy.html">حریم خصوصی</a> · <span id="brand2"></span></footer>
+<footer class="site-footer"><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand"><div class="flogo"><img class="b-fa" src="logo-fa-light.svg" alt="ترازینا" width="97" height="44"><span class="b-sep"></span><img class="b-en" src="logo-en-light.svg" alt="tarazina" width="115" height="25"></div><p>ابزار ساده قیمت‌گذاری برای کسب‌وکارهای کوچک: مواد اولیه را وارد کنید و قیمت تمام‌شده و قیمت فروش هر محصول را ببینید.</p></div>
+    <div><h3>ابزارها</h3><a href="./#calc">ماشین‌حساب عمومی</a><a href="trades.html">ماشین‌حساب هر کسب‌وکار</a></div>
+    <div><h3>ترازینا</h3><a href="about.html">درباره ما</a><a href="./#faq">سؤالات متداول</a></div>
+  </div>
+  <div class="fbottom"><span>© ۱۴۰۵ ترازینا · tarazina</span><a href="privacy.html">حریم خصوصی</a></div>
+</div></footer>
 <script>window.PAGE={"slug": "shokolat-gaz-sohan", "unit": "جعبه", "state": {"lines": [{"name": "شکر", "price": "45000", "buyQty": "1", "buyUnit": "kg", "useQty": "500", "useUnit": "g", "waste": "0"}, {"name": "آرد", "price": "50000", "buyQty": "1", "buyUnit": "kg", "useQty": "250", "useUnit": "g", "waste": "0"}, {"name": "روغن", "price": "120000", "buyQty": "1", "buyUnit": "l", "useQty": "150", "useUnit": "ml", "waste": "0"}, {"name": "پسته", "price": "1500000", "buyQty": "1", "buyUnit": "kg", "useQty": "100", "useUnit": "g", "waste": "10"}, {"name": "زعفران", "price": "150000", "buyQty": "1", "buyUnit": "g", "useQty": "0.2", "useUnit": "g", "waste": "0"}, {"name": "جعبه", "price": "300000", "buyQty": "50", "buyUnit": "piece", "useQty": "1", "useUnit": "piece", "waste": "0"}], "portions": "1", "packaging": "0", "overheadPct": "25", "marginPct": "40", "step": "5000"}};</script>
 <script src="config.js"></script>
 <script src="calc-core.js"></script>
